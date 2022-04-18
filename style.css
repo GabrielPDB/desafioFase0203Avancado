@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-color: hsla(218, 17%, 62%, 1);
+  --main-color: hsla(233, 100%, 97%, 1);
+  --span-font-color: hsla(232, 17%, 35%, 1);
+
+  font-size: 62.5%;
+}
+
+header {
+  background: var(--header-color);
+  text-align: center;
+  padding: 3.2rem 0 2.9rem 0;
+}
+
+header svg {
+  width: 13.7rem;
+}
+
+header h1 {
+  font-family: 'Staatliches';
+  font-size: 4rem;
+  line-height: 3.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  background: hsla(275, 18%, 79%, 1);
+  padding: 0.8rem;
+  color: white;
+}
+
+header p {
+  display: none;
+}
+
+main {
+  width: 100%;
+  background: var(--main-color);
+  padding: 3.2rem;
+}
+
+main p {
+  font-family: 'Palanquin', sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+
+  text-align: center;
+
+  margin-bottom: 3.9rem;
+}
+
+main .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+main .cards .card {
+  position: relative;
+}
+
+main .cards .card img {
+  width: 100%;
+  animation: downtop 800ms;
+}
+
+main .cards .card span {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  padding: 0 2.4rem;
+  background: hsla(312, 91%, 96%, 1);
+  border-radius: 2rem;
+  font-family: 'Staatliches';
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 5%;
+  color: var(--span-font-color);
+  animation: topdown 700ms 300ms backwards;
+}
+
+@keyframes topdown {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    display: flex;
+  }
+
+  header {
+    width: 30%;
+    height: 100vh;
+  }
+
+  header h1 {
+    font-size: 4.8rem;
+    padding: 2rem;
+  }
+
+  header p {
+    display: block;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding: 4rem;
+  }
+
+  main {
+    padding: 6.4rem;
+  }
+
+  main p {
+    display: none;
+  }
+
+  main .cards {
+    background: red;
+    margin: auto;
+    display: grid;
+    gap: 3.2rem;
+    grid-template-areas:
+      'A C E'
+      'B C F'
+      'B D F';
+  }
+
+  main .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  main .cards .card:nth-child(2) {
+    grid-area: C;
+  }
+
+  main .cards .card:nth-child(3) {
+    grid-area: D;
+  }
+
+  main .cards .card:nth-child(4) {
+    grid-area: B;
+  }
+
+  main .cards .card:nth-child(5) {
+    grid-area: E;
+  }
+
+  main .cards .card:nth-child(6) {
+    grid-area: F;
+  }
+
+  .cards .card span {
+    display: none;
+  }
+
+  main footer p {
+    display: block;
+    margin-top: 5rem;
+  }
+}
