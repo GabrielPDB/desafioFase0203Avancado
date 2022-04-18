@@ -142,7 +142,6 @@ main .cards .card span {
 
   main .cards {
     background: red;
-    margin: auto;
     display: grid;
     gap: 3.2rem;
     grid-template-areas:
